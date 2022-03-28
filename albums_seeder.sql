@@ -1,9 +1,9 @@
 use wesley
 
-INSERT INTO `albums` (`artist`, album_name, `release_date`, `sales`, `genres`)
+INSERT INTO `albums` (`artist`, `album_name`, `release_date`, `sales`, `genres`)
 VALUES ('Michael Jackson', 'Thriller', '1982', '49.2', 'Pop, post-disco, funk, rock');
 
-INSERT INTO `albums` (`artist`, album_name, `release_date`, `sales`, `genres`)
+INSERT INTO `albums` (`artist`, `album_name`, `release_date`, `sales`, `genres`)
 VALUES ('AC/DC', 'Back In Black', '1980', '29.5', 'hard rock');
 
 INSERT INTO `albums` (`artist`, `album_name`, `release_date`, `sales`, `genres`)
