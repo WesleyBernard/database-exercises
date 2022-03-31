@@ -33,11 +33,13 @@ join salaries s on dm.emp_no = s.emp_no
 where dm.to_date > now()
 and s.to_date > now();
 
-select dept_name, concat(last_name, ', ', first_name) as name
-from employees
-
-left join dept_emp de on employees.emp_no = de.emp_no
-left join dept_manager dm on employees.emp_no = dm.emp_no
-left join departments d on de.dept_no = d.dept_no
-
-where de.to_date > now()
+SELECT CONCAT(e.first_name, ' ', e.last_name)   AS 'Employee',
+       d.dept_name                              AS 'Department Name',
+       CONCAT(e2.first_name, ' ', e2.last_name) AS 'Manager'
+FROM employees AS e
+         JOIN dept_emp de ON e.emp_no = de.emp_no
+         JOIN departments d ON de.dept_no = d.dept_no
+         JOIN dept_manager dm ON d.dept_no = dm.dept_no AND dm.to_date > CURDATE()
+         JOIN employees e2 ON e2.emp_no = dm.emp_no
+WHERE de.to_date > CURDATE()
+ORDER BY d.dept_name;
