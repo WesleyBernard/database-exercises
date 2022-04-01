@@ -22,6 +22,7 @@ join employees e on de.emp_no = e.emp_no
 join titles t on e.emp_no = t.emp_no
 where dept_name = 'Customer Service'
 and t.to_date > curdate()
+and de.to_date > curdate()
 group by title;
 
 select dept_name, concat(e.last_name, ', ', e.first_name) as name, salary
